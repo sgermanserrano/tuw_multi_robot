@@ -197,7 +197,7 @@ target_link_libraries(local_multi_robot_controller
 # )
 
 # Mark executables and/or libraries for installation
-install(TARGETS ${PROJECT_NAME} local_multi_robot_controller tuw_velocity_controller
+install(TARGETS ${PROJECT_NAME} local_multi_robot_controller tuw_velocity_controller FakePoseEstimationNodelet
   ARCHIVE DESTINATION ${CATKIN_PACKAGE_LIB_DESTINATION}
   LIBRARY DESTINATION ${CATKIN_PACKAGE_LIB_DESTINATION}
   RUNTIME DESTINATION ${CATKIN_PACKAGE_BIN_DESTINATION}
@@ -209,6 +209,9 @@ install(TARGETS ${PROJECT_NAME} local_multi_robot_controller tuw_velocity_contro
 #   FILES_MATCHING PATTERN "*.h"
 #   PATTERN ".svn" EXCLUDE
 # )
+
+install(FILES nodelet_plugins.xml
+  DESTINATION ${CATKIN_PACKAGE_SHARE_DESTINATION})
 
 ## Mark config files for installation
 install(DIRECTORY cfg/
